@@ -1,0 +1,19 @@
+{
+  "name": "mahal-creator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ujjwalguptaofficial/mahal-creator.git"
+  },
+  "author": "https://ujjwalguptaofficial.github.io/",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ujjwalguptaofficial/mahal-creator/issues"
+  },
+  "homepage": "https://github.com/ujjwalguptaofficial/mahal-creator#readme"
+}
