@@ -1,3 +1,10 @@
-node_modules
-src
+#################
+## Directories
+#################
+
+node_modules/
+src/
+docs/
 *.tgz
+templates/typescript/node_modules
+!templates/typescript/src
