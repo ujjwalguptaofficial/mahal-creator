@@ -5,7 +5,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/index.ts',
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     mode: process.env.NODE_ENV || "development",
     module: {
         rules: [{
@@ -48,7 +48,7 @@ module.exports = {
     },
     output: {
         filename: 'bundles.js',
-        path: path.resolve(__dirname, 'bin/')
+        path: path.resolve(__dirname, 'dist/')
     },
     plugins: [
         new MahalPlugin({

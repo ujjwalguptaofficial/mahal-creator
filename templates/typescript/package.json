@@ -1,19 +1,23 @@
 {
-  "name": "todo",
+  "name": "mahal-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "deploy": "cross-env NODE_ENV=production webpack",
+    "build": "cross-env NODE_ENV=development webpack"
   },
   "author": "",
-  "license": "MIT",
+  "license": "",
+  "private": "true",
   "dependencies": {
     "@vue/component-compiler-utils": "^3.3.0",
     "mahal": "^0.16.0",
     "mahal-store": "^1.0.0"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
     "html-webpack-plugin": "^5.2.0",
     "mahal-webpack-loader": "^0.7.0",
