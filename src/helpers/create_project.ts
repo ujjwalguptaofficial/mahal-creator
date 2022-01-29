@@ -19,11 +19,11 @@ class SpinnerHelper {
 
 export const createProject = async function (type, folderName) {
     const projectPath = path.join(process.cwd(), folderName);
-    console.log("projectPath", projectPath);
-    if (pathExistsSync(projectPath)) {
-        console.error(`A folder with name ${projectPath} already exist in the current directoy`);
-        return;
-    }
+    // console.log("projectPath", projectPath);
+    // if (pathExistsSync(projectPath)) {
+    //     console.error(`A folder with name ${projectPath} already exist in the current directoy`);
+    //     return;
+    // }
     var templatePath = path.join(__dirname, '../templates', type);
     try {
 

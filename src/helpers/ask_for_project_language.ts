@@ -10,9 +10,10 @@ export const askForProjectLanguage = async function () {
     return answers.project_language;
 }
 export const askForFolderName = async function () {
+    console.log('Enter folder name to create project inside folder, leave blank for current folder');
     const questions = [{
         name: 'folder_name',
-        message: "Enter folder name to create project inside folder, leave blank for current folder",
+        message: "Folder name - ",
         type: 'input',
     }];
     const answers = await prompt(questions);
