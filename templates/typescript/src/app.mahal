@@ -5,8 +5,17 @@ dateCreated:
 ---
 
 <html>
-<div>
+<div class="mahal-app">
+	<img class="mahal-app_logo" :src="'mahal.png' | imgPath" alt="" />
 	<h1>Welcome to the {{appName}} App</h1>
+	<div class="mahal-app_imp-links-label">
+		Important Links
+	</div>
+	<div class="mahal-app_imp-links">
+		<a :for(link in importantLinks) :href="link.path">
+			{{link.label}}
+		</a>
+	</div>
 </div>
 </html>
 
@@ -16,6 +25,13 @@ import { Reactive } from "mahal";
 
 export default class extends BaseComponent {
     @Reactive appName = "Mahal";
+
+    importantLinks = [
+        {
+            label: "Core Doc",
+            path: "#",
+        },
+    ];
 
     onInit() {
         console.log("component initiated");
@@ -38,5 +54,24 @@ export default class extends BaseComponent {
 }
 </script>
 
-<style>
+<style lang="scss">
+.mahal-app {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.mahal-app_logo {
+    width: 200px;
+}
+.mahal-app_imp-links-label {
+    font-size: 18px;
+}
+.mahal-app_imp-links {
+    max-width: 300px;
+    font-size: 20px;
+    padding: 20px;
+    a {
+        color: #ffb431;
+    }
+}
 </style>
