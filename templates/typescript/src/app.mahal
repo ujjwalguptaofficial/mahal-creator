@@ -1,81 +1,24 @@
 ---
 name: app.mahal
-description:
+description: This component is the main parent component which is used to initiate the app. 
 dateCreated:
 ---
 
 <html>
-<div class="mahal-app">
-	<img class="mahal-app_logo" :src="'mahal.png' | imgPath" alt="" />
-	<h1>Welcome to the {{appName}} App</h1>
-	<div class="mahal-app_imp-links-label">
-		Important Links
-	</div>
-	<div class="mahal-app_imp-links">
-		<a :for(link in importantLinks) :href="link.path">
-			{{link.label}}
-		</a>
-	</div>
-</div>
+<MahalIntro />
 </html>
 
 <script>
-import { Reactive, Component } from "mahal";
+import { Component, Children } from "mahal";
+import MahalIntro from "@/components/mahal_intro.mahal";
 
+@Children({
+    MahalIntro
+})
 export default class extends Component {
-    @Reactive appName = "Mahal";
-
-    importantLinks = [
-        {
-            label: "Core Doc",
-            path: "https://ujjwalguptaofficial.github.io/mahal-doc/",
-        },
-        {
-            label: "Examples",
-            path: "https://github.com/ujjwalguptaofficial/mahal-examples",
-        },
-    ];
-
-    onInit() {
-        console.log("component initiated");
-        this.on("create", this.created);
-        this.on("mount", this.mounted);
-        this.on("destroy", this.destroyed);
-    }
-
-    created() {
-        console.log("component created");
-    }
-
-    mounted() {
-        console.log("component mounted - UI has been rendered");
-    }
-
-    destroyed() {
-        console.log("component destroyed - Let's unsubscribe to events");
-    }
+    
 }
 </script>
 
-<style lang="scss">
-.mahal-app {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.mahal-app_logo {
-    width: 200px;
-}
-.mahal-app_imp-links-label {
-    font-size: 18px;
-}
-.mahal-app_imp-links {
-    max-width: 300px;
-    font-size: 20px;
-    padding: 20px;
-    a {
-        color: #ffb431;
-        margin-left:15px;
-    }
-}
+<style>
 </style>
