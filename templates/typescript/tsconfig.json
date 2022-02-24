@@ -12,7 +12,7 @@
         "module": "es6",
         "outDir": "bin/ts",
         "sourceMap": true,
-        "target": "es5",
+        "target": "es6",
         "moduleResolution": "node",
         "paths": {
             "~/*": [

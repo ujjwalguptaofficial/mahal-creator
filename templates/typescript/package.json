@@ -12,8 +12,7 @@
   "license": "",
   "private": "true",
   "dependencies": {
-    "mahal": "^0.17.0",
-    "mahal-store": "^1.0.0"
+    "mahal": "^1.0.0"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",

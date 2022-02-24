@@ -20,16 +20,19 @@ dateCreated:
 </html>
 
 <script>
-import { BaseComponent } from "@/components/base_component";
-import { Reactive } from "mahal";
+import { Reactive, Component } from "mahal";
 
-export default class extends BaseComponent {
+export default class extends Component {
     @Reactive appName = "Mahal";
 
     importantLinks = [
         {
             label: "Core Doc",
-            path: "#",
+            path: "https://ujjwalguptaofficial.github.io/mahal-doc/",
+        },
+        {
+            label: "Examples",
+            path: "https://github.com/ujjwalguptaofficial/mahal-examples",
         },
     ];
 
@@ -72,6 +75,7 @@ export default class extends BaseComponent {
     padding: 20px;
     a {
         color: #ffb431;
+        margin-left:15px;
     }
 }
 </style>
