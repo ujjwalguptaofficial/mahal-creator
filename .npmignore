@@ -8,3 +8,5 @@ docs/
 *.tgz
 templates/typescript/node_modules
 !templates/typescript/src
+templates/javascript/node_modules
+!templates/javascript/src

@@ -9,7 +9,7 @@
   "scripts": {
     "build": "webpack",
     "buildpack": "npm run deploy && npm pack",
-    "deploy": "NODE_ENV=production npm run build",
+    "deploy": "cross-env NODE_ENV=production npm run build",
     "build:install": "npm run buildpack && npm run install:self",
     "install:self": "sudo npm i mahal-creator-1.0.0.tgz -g"
   },
@@ -32,6 +32,7 @@
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
     "@types/node": "^17.0.12",
+    "cross-env": "^7.0.3",
     "ts-loader": "^5.3.3",
     "tslint": "^5.17.0",
     "typescript": "^3.4.2",
