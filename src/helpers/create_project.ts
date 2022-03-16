@@ -3,7 +3,7 @@ import { EOL } from "os";
 import { runCommand } from ".";
 import { Spinner } from "cli-spinner";
 import * as path from "path";
-
+import ghDownload from "github-directory-downloader";
 class SpinnerHelper {
     static spinnerInstance;
     static init(text: string) {
@@ -24,11 +24,17 @@ export const createProject = async function (type, folderName) {
     //     console.error(`A folder with name ${projectPath} already exist in the current directoy`);
     //     return;
     // }
-    var templatePath = path.join(__dirname, '../templates', type);
+    var templatePath = "https://github.com/ujjwalguptaofficial/mahal-templates/tree/main/" + type;
     try {
 
         SpinnerHelper.init("Setting up project");
-        copySync(templatePath, projectPath);
+        const downloadStat = await ghDownload(templatePath, projectPath, {
+            muteLog: true
+        });
+        if (!downloadStat.success) {
+            const err = `error - ${downloadStat.error}, project path = ${projectPath}, template path = ${templatePath}`;
+            throw new Error(err || 'can not download the template repo, please contact author if you are seeing this error.');
+        }
         SpinnerHelper.stop();
         SpinnerHelper.init(`Installing dependency`);
         // downloading dependencies
