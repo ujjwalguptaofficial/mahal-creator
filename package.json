@@ -1,6 +1,6 @@
 {
   "name": "mahal-creator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI for mahal javascript framework",
   "main": "./dist/app.js",
   "bin": {
@@ -11,7 +11,8 @@
     "buildpack": "npm run deploy && npm pack",
     "deploy": "cross-env NODE_ENV=production npm run build",
     "build:install": "npm run buildpack && npm run install:self",
-    "install:self": "sudo npm i mahal-creator-1.0.0.tgz -g"
+    "install:self": "sudo npm i mahal-creator-1.0.0.tgz -g",
+    "prepublishOnly": "npm run deploy"
   },
   "repository": {
     "type": "git",
