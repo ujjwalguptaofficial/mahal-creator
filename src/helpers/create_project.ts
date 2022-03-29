@@ -38,7 +38,7 @@ export const createProject = async function (type, folderName) {
         SpinnerHelper.stop();
         SpinnerHelper.init(`Installing dependency`);
         // downloading dependencies
-        let exitCode = await runCommand(`cd ${projectPath} && npm ci`);
+        let exitCode = await runCommand(`cd ${projectPath} && npm i`);
         SpinnerHelper.stop();
         if (exitCode != 0) {
             console.log(`unable to install dependencies, process exited with code ${exitCode.toString()}`)
