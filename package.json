@@ -1,6 +1,6 @@
 {
-  "name": "mahal-creator",
-  "version": "1.0.2",
+  "name": "@mahaljs/creator",
+  "version": "1.0.0",
   "description": "CLI for mahal javascript framework",
   "main": "./dist/app.js",
   "bin": {
